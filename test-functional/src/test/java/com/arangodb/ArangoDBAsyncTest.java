@@ -183,7 +183,7 @@ class ArangoDBAsyncTest extends BaseJunit5 {
         assertThat(info.getName()).isEqualTo(dbName);
 
         Optional<UserEntity> retrievedUserOptional = arangoDB.getUsers().get().stream()
-                .filter(it -> it.getUser().equals("testUser"))
+                .filter(it -> "testUser".equals(it.getUser()))
                 .findFirst();
         assertThat(retrievedUserOptional).isPresent();
 
