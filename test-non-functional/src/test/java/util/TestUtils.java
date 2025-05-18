@@ -27,6 +27,7 @@ import com.arangodb.Protocol;
 import com.arangodb.serde.ArangoSerde;
 import com.arangodb.serde.jackson.JacksonSerde;
 import com.arangodb.util.UnicodeUtils;
+import java.security.SecureRandom;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +40,7 @@ import java.util.UUID;
 public final class TestUtils {
     public static final String TEST_DB = "java_driver_test_db";
     private static final String[] allChars = TestUtils.generateAllInputChars();
-    private static final Random r = new Random();
+    private static final Random r = new SecureRandom();
 
     private TestUtils() {
     }

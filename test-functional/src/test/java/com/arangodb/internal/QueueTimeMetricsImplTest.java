@@ -1,6 +1,7 @@
 package com.arangodb.internal;
 
 import com.arangodb.model.QueueTimeSample;
+import java.security.SecureRandom;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -12,7 +13,7 @@ import static org.assertj.core.api.Assertions.within;
 
 class QueueTimeMetricsImplTest {
     private final static int QSIZE = 1024;
-    private final Random rnd = new Random();
+    private final Random rnd = new SecureRandom();
     private final QueueTimeMetricsImpl q = new QueueTimeMetricsImpl(QSIZE);
 
     @Test
