@@ -208,13 +208,13 @@ class ArangoGraphAsyncTest extends BaseJunit5 {
         assertThat(edgeDefinitions).hasSize(3);
         int count = 0;
         for (final EdgeDefinition e : edgeDefinitions) {
-            if (e.getCollection().equals(EDGE_COL_3)) {
+            if (EDGE_COL_3.equals(e.getCollection())) {
                 count++;
             }
         }
         assertThat(count).isEqualTo(1);
         for (final EdgeDefinition e : edgeDefinitions) {
-            if (e.getCollection().equals(EDGE_COL_3)) {
+            if (EDGE_COL_3.equals(e.getCollection())) {
                 assertThat(e.getFrom()).contains(VERTEX_COL_1);
                 assertThat(e.getTo()).contains(VERTEX_COL_2);
             }
@@ -268,13 +268,13 @@ class ArangoGraphAsyncTest extends BaseJunit5 {
         assertThat(edgeDefinitions).hasSize(2);
         int count = 0;
         for (final EdgeDefinition e : edgeDefinitions) {
-            if (e.getCollection().equals(EDGE_COL_1)) {
+            if (EDGE_COL_1.equals(e.getCollection())) {
                 count++;
             }
         }
         assertThat(count).isEqualTo(1);
         for (final EdgeDefinition e : edgeDefinitions) {
-            if (e.getCollection().equals(EDGE_COL_1)) {
+            if (EDGE_COL_1.equals(e.getCollection())) {
                 assertThat(e.getFrom()).contains(VERTEX_COL_3);
                 assertThat(e.getTo()).contains(VERTEX_COL_4);
             }
@@ -299,13 +299,13 @@ class ArangoGraphAsyncTest extends BaseJunit5 {
         assertThat(edgeDefinitions).hasSize(2);
         int count = 0;
         for (final EdgeDefinition e : edgeDefinitions) {
-            if (e.getCollection().equals(EDGE_COL_1)) {
+            if (EDGE_COL_1.equals(e.getCollection())) {
                 count++;
             }
         }
         assertThat(count).isEqualTo(1);
         for (final EdgeDefinition e : edgeDefinitions) {
-            if (e.getCollection().equals(EDGE_COL_1)) {
+            if (EDGE_COL_1.equals(e.getCollection())) {
                 assertThat(e.getFrom()).contains(VERTEX_COL_3);
                 assertThat(e.getTo()).contains(VERTEX_COL_4);
             }
