@@ -5,6 +5,7 @@ import com.arangodb.internal.net.ArangoDBRedirectException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.JsonNodeFactory;
+import io.github.pixee.security.ObjectInputFilters;
 import org.junit.jupiter.api.Test;
 
 import java.io.*;
@@ -57,6 +58,7 @@ class SerializableTest {
 
         InputStream is = new ByteArrayInputStream(os.toByteArray());
         ObjectInputStream objectInputStream = new ObjectInputStream(is);
+        ObjectInputFilters.enableObjectFilterIfUnprotected(objectInputStream);
         T output = (T) objectInputStream.readObject();
         objectInputStream.close();
 
